@@ -18,10 +18,10 @@ function printQuote(){
   var fullQuote = '<p class = "quote">' + selectedQuote.quote + '</p>';
   fullQuote += '<p class = "source">' + selectedQuote.source;
 
-  if (selectedQuote.citation !== null)
+  if (selectedQuote.citation != null)
     fullQuote += '<span class = "citation">' + selectedQuote.citation + '</span>';
 
-  if (selectedQuote.year !== null)
+  if (selectedQuote.year != null)
     fullQuote += '<span class = "year">' + selectedQuote.year + '</span>';
 
   fullQuote += '</p>';
