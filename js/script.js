@@ -13,7 +13,8 @@ function getRandomQuote(){
 }
 
 function printQuote(){
-  var fullQuote = quotes[getRandomQuote()].quote;
+  var quoteIndex = getRandomQuote();
+  var fullQuote = quotes[quoteIndex].quote;
 }
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
