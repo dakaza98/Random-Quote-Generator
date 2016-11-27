@@ -6,6 +6,7 @@ var quotes = [
   {quote: "If we die for them, Harry I'm going to kill you!", source: 'Ron Weasly', citation: 'Harry Potter and the deathly hallows Part 2', year: '2011', tags: ['Humor', 'Movie Quote']}
 ];
 var usedQuotes = [];                      //usedQuotes contains the indexes of the quotes that have not been outputed to the page
+var timeoutID;
 
 function fillUsedQuotes(){
   for (var i = 0; i < quotes.length; i++)
@@ -46,8 +47,9 @@ function getRandomQuote(){
 
 //Creates the html code for the quote
 function printQuote(){
-  var selectedQuote = getRandomQuote();
+  window.clearTimeout(timeoutID);
 
+  var selectedQuote = getRandomQuote();
   var fullQuote = '<p class = "quote">' + selectedQuote.quote + '</p>';
   fullQuote += '<p class = "source">' + selectedQuote.source;
 
@@ -61,6 +63,11 @@ function printQuote(){
 
   changeBackgroundColor();                                        //Changes the background color
   document.getElementById('quote-box').innerHTML = fullQuote;     //Adds the quote to the page
+  switchQuoteAfterTime();
+}
+
+function switchQuoteAfterTime(){
+  timeoutID = window.setTimeout(printQuote, 10000);
 }
 
 // event listener to respond to "Show another quote" button clicks
