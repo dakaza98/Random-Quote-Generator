@@ -8,13 +8,13 @@ var quotes = [
 
 //Selects a random quote from the quotes array and returns it
 function getRandomQuote(){
-  var randomQuote = Math.floor(Math.random() * quotes.length);
-  return randomQuote;
+  var randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomQuoteIndex];
 }
 
 function printQuote(){
-  var quoteIndex = getRandomQuote();
-  var selectedQuote = quotes[quoteIndex];
+  var selectedQuote = getRandomQuote();
+
   var fullQuote = '<p class = "quote">' + selectedQuote.quote + '</p>';
   fullQuote += '<p class = "source">' + selectedQuote.source;
 
