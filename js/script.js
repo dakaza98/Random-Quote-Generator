@@ -6,7 +6,7 @@ var quotes = [
   {quote: "If we die for them, Harry I'm going to kill you!", source: 'Ron Weasly', citation: 'Harry Potter and the deathly hallows Part 2', year: '2011', tags: ['Humor', 'Movie Quote']}
 ];
 
-//Selects a random quote from the quotes array and retruns it
+//Selects a random quote from the quotes array and returns it
 function getRandomQuote(){
   var randomQuote = Math.floor(Math.random() * quotes.length);
   return randomQuote;
@@ -19,7 +19,12 @@ function printQuote(){
   fullQuote += '<p class = "source">' + selectedQuote.source;
 
   if (selectedQuote.citation !== null)
-    fullQuote += '<span class = "citation">' + selectedQuote.citation + '</span>'
+    fullQuote += '<span class = "citation">' + selectedQuote.citation + '</span>';
+
+  if (selectedQuote.year !== null)
+    fullQuote += '<span class = "year">' + selectedQuote.year + '</span>';
+
+  fullQuote += '</p>';
 }
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
