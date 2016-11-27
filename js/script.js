@@ -6,7 +6,7 @@ var quotes = [
   {quote: "If we die for them, Harry I'm going to kill you!", source: 'Ron Weasly', citation: 'Harry Potter and the deathly hallows Part 2', year: '2011', tags: ['Humor', 'Movie Quote']}
 ];
 
-function randomRBG(){
+function randomRGB(){
   var RGB = 'rgb(';
   for (var i = 0; i < 3; i++){
     RGB += Math.floor(Math.random() * 256);
@@ -19,9 +19,11 @@ function randomRBG(){
   return RGB;
 }
 
+//Sets the background color to a random RGB value
 function changeBackgroundColor(){
-  document.body.style.backgroundColor = randomRBG();
+  document.body.style.backgroundColor = randomRGB();
 }
+
 //Selects a random quote from the quotes array and returns it
 function getRandomQuote(){
   var randomQuoteIndex = Math.floor(Math.random() * quotes.length);
