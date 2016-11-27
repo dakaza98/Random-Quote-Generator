@@ -6,6 +6,22 @@ var quotes = [
   {quote: "If we die for them, Harry I'm going to kill you!", source: 'Ron Weasly', citation: 'Harry Potter and the deathly hallows Part 2', year: '2011', tags: ['Humor', 'Movie Quote']}
 ];
 
+function randomRBG(){
+  var RGB = 'rgb(';
+  for (var i = 0; i < 3; i++){
+    RGB += Math.floor(Math.random() * 256);
+    if(i !== 2)
+      RGB += ',';
+
+    else
+      RGB += ')';
+  }
+  return RGB;
+}
+
+function changeBackgroundColor(){
+  document.body.style.backgroundColor = randomRBG();
+}
 //Selects a random quote from the quotes array and returns it
 function getRandomQuote(){
   var randomQuoteIndex = Math.floor(Math.random() * quotes.length);
@@ -26,6 +42,7 @@ function printQuote(){
 
   fullQuote += '</p>';
 
+  changeBackgroundColor();
   document.getElementById('quote-box').innerHTML = fullQuote;
 }
 // event listener to respond to "Show another quote" button clicks
